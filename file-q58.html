@@ -1,5 +1,18 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spy App Viewer</title>
+    <script>
+        async function fetchData() {
+            const response = await fetch('https://your-server.com/data');
+            const data = await response.json();
+            document.getElementById('data').innerText = JSON.stringify(data, null, 2);
+        }
+    </script>
+</head>
+<body>
     <h1>Spy App Viewer</h1>
-    <button>Load Data</button>
+    <button onclick="fetchData()">Load Data</button>
     <pre id="data"></pre>
-
+</body>
+</html>
